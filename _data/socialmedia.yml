@@ -1,22 +1,22 @@
 - name: GitHub
-  url: http://github.com/phlow
+  url: http://github.com/griffincs
   class: icon-github
-  title: Code und mehr...
+  title: Code and more...
 
 - name: YouTube
-  url: http://www.youtube.com/PhlowMedia
+  url: #
   class: icon-youtube
-  title: "Videos, Video-Anleitungen und Filme von Phlow auf YouTube"
+  title: "Coming soon"
 
 - name: Twitter
-  url: http://twitter.com/phlow
+  url: http://twitter.com/birdistry
   class: icon-twitter
-  title: "Immer das Neuste von Phlow gibt es auf Twitter"
+  title: "We like birds"
 
-- name: Mixcloud
-  url: http://www.mixcloud.com/phlow/
+- name: Podcast
+  url: #
   class: icon-cloud
-  title: "Mixe, was sonst?"
+  title: "Coming someday"
 
 # - name: Facebook
 #   url: http://www.facebook.com/
