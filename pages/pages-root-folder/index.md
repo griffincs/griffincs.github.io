@@ -14,7 +14,7 @@ widget1:
   text: 'News, thoughts, ideas, developments, and shenanigans.'
 widget2:
   title: "CS Class"
-  url: 'http://griffincs.github.io/csclass/'
+  url: 'http://mrkoenen.github.io/class/'
   text: 'Online textbook and curriculum for our dual enrollment class on Python programming and data science'
   video: '<a href="#" data-reveal-id="videoModal"><img src="http://phlow.github.io/feeling-responsive/images/start-video-feeling-responsive-302x182.jpg" width="302" height="182" alt=""/></a>'
 widget3:
