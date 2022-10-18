@@ -9,7 +9,7 @@ header:
   image_fullwidth: header_unsplash_12.jpg
 widget1:
   title: "Blog & Portfolio"
-  url: 'http://griffincs.github.io/blog/'
+  url: 'https://griffincs.team/blog/'
   image: widget-1-302x182.jpg
   text: 'News, thoughts, ideas, developments, and shenanigans.'
 widget2:
@@ -19,7 +19,7 @@ widget2:
   video: '<a href="#" data-reveal-id="videoModal"><img src="http://phlow.github.io/feeling-responsive/images/start-video-feeling-responsive-302x182.jpg" width="302" height="182" alt=""/></a>'
 widget3:
   title: "N/F2 CTF"
-  url: 'https://griffincs.github.io/nf2'
+  url: 'https://griffincs.team/nf2'
   image: widget-github-303x182.jpg
   text: '<em>News, info, and updates for our CTF team.'
 #
