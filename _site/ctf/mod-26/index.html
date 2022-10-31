@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Header With Logo Only</title>
+	<title>Problem Writeup: Mod 26 - CTF 2</title>
 
     <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/styles_feeling_responsive.css">
 
@@ -26,19 +26,19 @@
 
 
 	<!-- Search Engine Optimization -->
-	<meta name="description" content="Feeling Responsive allows you to use all kinds of headers. This is the default mode. It shows a header just with your logo on the standard background.">
+	<meta name="description" content="This problem introduces us to cryptography, specifically to the Caesar cipher.">
 	<meta name="google-site-verification" content="Vk0IOJ2jwG_qEoG7fuEXYqv0m2rLa8P778Fi_GrsgEQ">
 	<meta name="msvalidate.01" content="0FB4C028ABCF07C908C54386ABD2D97F" >
 	
 	
 	
-	<link rel="canonical" href="http://localhost:4000/design/header-logo-only/">
+	<link rel="canonical" href="http://localhost:4000/ctf/mod-26/">
 
 
 	<!-- Facebook Open Graph -->
-	<meta property="og:title" content="Header With Logo Only">
-	<meta property="og:description" content="Feeling Responsive allows you to use all kinds of headers. This is the default mode. It shows a header just with your logo on the standard background.">
-	<meta property="og:url" content="http://localhost:4000/design/header-logo-only/">
+	<meta property="og:title" content="Problem Writeup: Mod 26 - CTF 2">
+	<meta property="og:description" content="This problem introduces us to cryptography, specifically to the Caesar cipher.">
+	<meta property="og:url" content="http://localhost:4000/ctf/mod-26/">
 	<meta property="og:locale" content="en_EN">
 	<meta property="og:type" content="website">
 	<meta property="og:site_name" content="Griffin CS">
@@ -234,6 +234,23 @@
 
 
 
+<nav class="breadcrumbs" role="menubar" aria-label="breadcrumbs">
+ <a href="http://localhost:4000">Start</a>
+ 
+   
+    
+        <a href="http://localhost:4000/ctf/">ctf</a>
+    
+  
+    
+        <a class="current">Problem Writeup: Mod 26 - CTF 2</a>
+    
+  
+</nav>
+
+
+
+
 
 
 
@@ -245,47 +262,48 @@
 				
 
 				<div itemprop="name">
-					<p class="subheadline">Headers With Style</p>
-					<h1>Header With Logo Only</h1>
+					<p class="subheadline">Practice CTF</p>
+					<h1>Problem Writeup: Mod 26 - CTF 2</h1>
 				</div>
 			</header>
 
 
 			
 			<p class="teaser" itemprop="description">
-				Feeling Responsive allows you to use all kinds of headers. This is the default mode. It shows a header just with your logo on the standard background.
+				This problem introduces us to cryptography, specifically to the Caesar cipher.
 			</p>
 			
 
 			<div itemprop="articleSection">
-			<p>No front matter code needed.
-<!--more--></p>
+			<p>Category: Cryptography</p>
 
-<h3 class="t60" id="all-header-styles">All Header-Styles</h3>
+<h2 id="description">Description</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Cryptography can be easy, do you know what ROT13 is? `cvpbPGS{arkg_gvzr_V'yy_gel_2_ebhaqf_bs_ebg13_uJdSftmh}`
+</code></pre></div></div>
 
-<ul class="side-nav">
+<h2 id="approach">Approach</h2>
 
-  
+<p>This problem introduces us to the world of cryptography. We will explore the ancient Caesar cipher and learn how to use CyberChef, a very powerful tool we will be using a lot in our CTF problems.</p>
 
-    
-      <li><a href="http://localhost:4000/design/no-header/">Headers With Style &middot; <strong>No Header</strong></a></li>
-    
-      <li><a href="http://localhost:4000/design/no-header-but-image/">Headers With Style &middot; <strong>No Header but Article Image</strong></a></li>
-    
-      <li><a href="http://localhost:4000/design/header-with-text/">Headers With Style &middot; <strong>Header With Text</strong></a></li>
-    
-      <li><a href="http://localhost:4000/design/header-logo-only/">Headers With Style &middot; <strong>Header With Logo Only</strong></a></li>
-    
-      <li><a href="http://localhost:4000/design/header-image-color/">Headers With Style &middot; <strong>Header Image With Background Color</strong></a></li>
-    
-      <li><a href="http://localhost:4000/design/header-full-width-image/">Headers With Style &middot; <strong>Header with a Full-Width-Image</strong></a></li>
-    
-      <li><a href="http://localhost:4000/design/header-image-pattern/">Headers With Style &middot; <strong>Header Image With Pattern</strong></a></li>
-    
+<h3 id="encryption">Encryption</h3>
 
-  
-</ul>
+<p>The problem description includes a string of seeming gibberish: <code class="language-plaintext highlighter-rouge">cvpbPGS{arkg_gvzr_V'yy_gel_2_ebhaqf_bs_ebg13_uJdSftmh}</code>. Looking at the string more closely, we notice that it looks to be in the general format of a CTF flag; in fact, the first six letters could be an encrypted form of “picoCTF”.</p>
 
+<p>Additionally, the problem description asks if we know what ROT13 is. A quick Google search tells us that ROT13 is a simple shift cipher, where every letter of the alphabet is shifted a certain number of places to the right to create an encoded message:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input	ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+Output	NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm
+</code></pre></div></div>
+
+<p>Let’s begin, then, by assuming that the given string is the CTF flag encrypted by ROT13.</p>
+
+<h3 id="cyberchef">Cyberchef</h3>
+
+<p>To decrypt the string, we can write out the message one character at a time–or we could use a computer to speed up this task. There are plenty of ROT13 decrypters online, but we will use a website called <code class="language-plaintext highlighter-rouge">cyberchef.com</code> for this.</p>
+
+<p>Copy the encrypted string and go to <code class="language-plaintext highlighter-rouge">cyberchef.com</code>. Search for ROT13 in the Search bar on the CyberChef website, and drag the ROT 13 box into the Recipe space. Then paste the encrypted string into the Input box, and immediately the decrypted string appears in the Output box.</p>
+
+<p>You should bookmark the CyberChef website because we will return to it soon.</p>
 
 			</div>
 
@@ -298,22 +316,22 @@
 					
 
 				
-				<time class="icon-calendar pr20" datetime="2014-10-09T00:00:00-06:00" itemprop="datePublished"> 2014-10-09</time>
+				<time class="icon-calendar pr20" datetime="2022-10-24T00:00:00-06:00" itemprop="datePublished"> 2022-10-24</time>
 				
 
-				<span class="icon-archive pr20"> DESIGN</span>
+				<span class="icon-archive pr20"> CTF</span>
 				<br />
-				<span class="pr20"><span class="icon-price-tag pr10"> design</span> <span class="icon-price-tag pr10"> background color</span> <span class="icon-price-tag pr10"> header</span> </span>
+				<span class="pr20"><span class="icon-price-tag pr10"> blog</span> <span class="icon-price-tag pr10"> content</span> <span class="icon-price-tag pr10"> practice</span> </span>
 			</p>
 
 			
 			<div id="post-nav" class="row">
 				
-				<div class="medium-5 columns"><a class="button small radius prev" href="http://localhost:4000/design/header-image-color/">&laquo; Header Image With Background Color</a></div><!-- /.small-4.columns -->
+				<div class="medium-5 columns"><a class="button small radius prev" href="http://localhost:4000/ctf/obedient-cat/">&laquo; Problem Writeup: Obedient Cat - CTF 1</a></div><!-- /.small-4.columns -->
 				
 				<div class="medium-2 columns text-center"><a class="button small radius expand" href="http://localhost:4000/blog/archive/" title="Blog Archive">Archive</a></div><!-- /.small-4.columns -->
 				
-				<div class="medium-5 columns text-right"><a class="button small radius next" href="http://localhost:4000/design/header-with-text/">Header With Text &raquo;</a></div><!-- /.small-4.columns -->
+				<div class="medium-5 columns text-right"><a class="button small radius next" href="http://localhost:4000/ctf/tab-tab-attack/">Problem Writeup: Tab, Tab, Attack - CTF 2 &raquo;</a></div><!-- /.small-4.columns -->
 				
 			</div>
 			

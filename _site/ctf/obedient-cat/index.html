@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>GriffinCS Blog</title>
+	<title>Problem Writeup: Obedient Cat - CTF 1</title>
 
     <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/styles_feeling_responsive.css">
 
@@ -26,19 +26,19 @@
 
 
 	<!-- Search Engine Optimization -->
-	<meta name="description" content="Log of Classical Code">
+	<meta name="description" content="This is a very simple problem that introduces us to the webshell and to two important Linux commands:  `wget` and `cat`.">
 	<meta name="google-site-verification" content="Vk0IOJ2jwG_qEoG7fuEXYqv0m2rLa8P778Fi_GrsgEQ">
 	<meta name="msvalidate.01" content="0FB4C028ABCF07C908C54386ABD2D97F" >
 	
 	
-	<meta name="robots" content="noindex">
-	<link rel="canonical" href="http://localhost:4000/blog/page2/">
+	
+	<link rel="canonical" href="http://localhost:4000/ctf/obedient-cat/">
 
 
 	<!-- Facebook Open Graph -->
-	<meta property="og:title" content="GriffinCS Blog">
-	<meta property="og:description" content="Log of Classical Code">
-	<meta property="og:url" content="http://localhost:4000/blog/page2/">
+	<meta property="og:title" content="Problem Writeup: Obedient Cat - CTF 1">
+	<meta property="og:description" content="This is a very simple problem that introduces us to the webshell and to two important Linux commands:  `wget` and `cat`.">
+	<meta property="og:url" content="http://localhost:4000/ctf/obedient-cat/">
 	<meta property="og:locale" content="en_EN">
 	<meta property="og:type" content="website">
 	<meta property="og:site_name" content="Griffin CS">
@@ -86,7 +86,7 @@
 
 
 </head>
-<body id="top-of-page" class="blog-index">
+<body id="top-of-page" class="post">
 	
 	
 <div id="navigation" class="sticky">
@@ -221,7 +221,7 @@
 
 	
 
-<div id="masthead">
+<div id="masthead-no-image-header">
 	<div class="row">
 		<div class="small-12 columns">
 			<a id="logo" href="http://localhost:4000/" title="Griffin CS – Classical Code">
@@ -234,131 +234,143 @@
 
 
 
-
-
-
-
-
-
-	<div class="row">
-	<div class="medium-8 columns t30">
-		
-
-
-
-  <div class="row">
-    <div class="small-12 columns b60">
-      <p class="subheadline"><span class="subheader">design</span> – Headers With Style</p>
-      <h2><a href="http://localhost:4000/design/no-header-but-image/">No Header but Article Image</a></h2>
-      <p>
-        
-
-        Feeling Responsive enables you to get the attention of visitors. If you don&#39;t want to use a big header, use an image for the article instead.
-
-        <a href="http://localhost:4000/design/no-header-but-image/" title="Read No Header but Article Image"><strong>Read More&nbsp;›</strong></a>
-      </p>
-    </div><!-- /.small-12.columns -->
-  </div><!-- /.row -->
-
-  <div class="row">
-    <div class="small-12 columns b60">
-      <p class="subheadline"><span class="subheader">design</span> – Headers With Style</p>
-      <h2><a href="http://localhost:4000/design/header-with-text/">Header With Text</a></h2>
-      <p>
-        
-
-        Feeling Responsive allows you to use all kinds of headers. This header is with text.
-
-        <a href="http://localhost:4000/design/header-with-text/" title="Read Header With Text"><strong>Read More&nbsp;›</strong></a>
-      </p>
-    </div><!-- /.small-12.columns -->
-  </div><!-- /.row -->
-
-  <div class="row">
-    <div class="small-12 columns b60">
-      <p class="subheadline"><span class="subheader">design</span> – Headers With Style</p>
-      <h2><a href="http://localhost:4000/design/header-logo-only/">Header With Logo Only</a></h2>
-      <p>
-        
-
-        Feeling Responsive allows you to use all kinds of headers. This is the default mode. It shows a header just with your logo on the standard background.
-
-        <a href="http://localhost:4000/design/header-logo-only/" title="Read Header With Logo Only"><strong>Read More&nbsp;›</strong></a>
-      </p>
-    </div><!-- /.small-12.columns -->
-  </div><!-- /.row -->
-
-  <div class="row">
-    <div class="small-12 columns b60">
-      <p class="subheadline"><span class="subheader">design</span> – Headers With Style</p>
-      <h2><a href="http://localhost:4000/design/header-image-color/">Header Image With Background Color</a></h2>
-      <p>
-        
-
-        Feeling Responsive allows you to use all kinds of headers. This example shows a header image with a defined background color via front matter.
-
-        <a href="http://localhost:4000/design/header-image-color/" title="Read Header Image With Background Color"><strong>Read More&nbsp;›</strong></a>
-      </p>
-    </div><!-- /.small-12.columns -->
-  </div><!-- /.row -->
-
-  <div class="row">
-    <div class="small-12 columns b60">
-      <p class="subheadline"><span class="subheader">design</span> – Headers With Style</p>
-      <h2><a href="http://localhost:4000/design/header-full-width-image/">Header with a Full-Width-Image</a></h2>
-      <p>
-        <a href="http://localhost:4000/design/header-full-width-image/" title="Header with a Full-Width-Image"><img src="https://phlow.github.io/feeling-responsive/images/unsplash_brooklyn-bridge-thumb.jpg" class="alignleft" width="150" height="150" alt="GriffinCS Blog"></a>
-
-        Feeling Responsive allows you to use all kinds of headers. This example shows a header with a full-width-image.
-
-        <a href="http://localhost:4000/design/header-full-width-image/" title="Read Header with a Full-Width-Image"><strong>Read More&nbsp;›</strong></a>
-      </p>
-    </div><!-- /.small-12.columns -->
-  </div><!-- /.row -->
-
-
-
-<nav id="pagination">
+<nav class="breadcrumbs" role="menubar" aria-label="breadcrumbs">
+ <a href="http://localhost:4000">Start</a>
+ 
+   
     
-      
-      <a rel="prev" class="radius button small" href="http://localhost:4000/blog/" title="Previous Posts">&laquo; Previous Posts</a>
-      
+        <a href="http://localhost:4000/ctf/">ctf</a>
     
-
-    <a class="radius button small" href="http://localhost:4000/blog/archive/" title="Blog Archive">Blog Archive</a>
-
+  
     
-    <a rel="next" class="radius button small" href="http://localhost:4000/blog/page3/" title="Next Posts">Next &raquo;</a>
+        <a class="current">Problem Writeup: Obedient Cat - CTF 1</a>
     
-  </nav>
+  
+</nav>
 
 
-	</div><!-- /.medium-7.columns -->
 
 
-	<div class="medium-4 columns t30">
-		<aside>
-	<div class="panel radius">
-		<h3>Sidebar</h3>
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-
-			Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		</p>
-	</div>
-
-  <img class="b30" src="http://dummyimage.com/303x16:9/df4949/e27b3f.png&amp;text=Ugly+Ad+Space" alt="">
 
 
-	<div class="border-dotted radius b30">
-		<img src="http://placekitten.com/271/270" alt="uh, Placekitten">
-		<p class="text-left">
-			This is an advertisment with a crazy cat! <a href="http://placekitten.com/">More cats, please!</a>
-		</p>
-	</div>
-</aside>
-	</div><!-- /.medium-5.columns -->
+
+
+	<div class="row t30">
+	<div class="medium-8 columns medium-offset-2 end">
+		<article itemscope itemtype="https://schema.org/Article">
+			<header>
+				
+
+				<div itemprop="name">
+					<p class="subheadline">Practice CTF</p>
+					<h1>Problem Writeup: Obedient Cat - CTF 1</h1>
+				</div>
+			</header>
+
+
+			
+			<p class="teaser" itemprop="description">
+				This is a very simple problem that introduces us to the webshell and to two important Linux commands:  `wget` and `cat`.
+			</p>
+			
+
+			<div itemprop="articleSection">
+			<p>Category: General Skills</p>
+
+<h2 id="description">Description</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This file has a flag in plain sight (aka "in-the-clear"). Download flag.
+</code></pre></div></div>
+
+<h2 id="approach">Approach</h2>
+
+<p>This is a very simple problem that introduces us to the webshell and to two important Linux commands:  <code class="language-plaintext highlighter-rouge">wget</code> and <code class="language-plaintext highlighter-rouge">cat</code>.</p>
+
+<h3 id="wget">wget</h3>
+
+<p><code class="language-plaintext highlighter-rouge">wget</code> is a Linux tool for retrieving files from the internet (it is short for “web get”). Instead of downloading the file linked in the problem description, we will download it into the webshell. Though it is coming from a pretty trusted source, it’s good not to download the mystery file directly into our Downloads folder, if we can help it.</p>
+
+<p>To download the file, we first right-click on the link, then select “Copy Link Address”. This copies the URL to our clipboard. Then in the webshell, type <code class="language-plaintext highlighter-rouge">wget</code>, a space, and paste in the URL we just copied:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pimaker-picoctf@webshell:~$ wget https://mercury.picoctf.net/static/a5683698ac318b47bd060cb786859f23/flag
+--2022-10-17 22:37:09--  https://mercury.picoctf.net/static/a5683698ac318b47bd060cb786859f23/flag
+Resolving mercury.picoctf.net (mercury.picoctf.net)... 18.189.209.142
+Connecting to mercury.picoctf.net (mercury.picoctf.net)|18.189.209.142|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 34 [application/octet-stream]
+Saving to: 'flag.1'
+
+flag              100%[==================&gt;]      34  --.-KB/s    in 0s      
+
+2022-10-17 22:37:10 (12.7 MB/s) - 'flag.1' saved [34/34]
+
+pimaker-picoctf@webshell:~$ 
+</code></pre></div></div>
+
+<h3 id="ls">ls</h3>
+
+<p>When we hit ENTER, a lot of things happen almost instantly. <code class="language-plaintext highlighter-rouge">wget</code> connects to the URL we pasted, requests the file, then saves it to the webshell (in our user directory). To see the file that was downloaded, enter <code class="language-plaintext highlighter-rouge">ls</code> (short for “list”) in the command prompt:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pimaker-picoctf@webshell:~$ ls
+README.txt  flag
+pimaker-picoctf@webshell:~$ 
+</code></pre></div></div>
+
+<p>There are currently two files in our user directory. The <code class="language-plaintext highlighter-rouge">README.txt</code> file contains a lot of useful tips and information for using the pico webshell; you’ll be able to read it after finishing the next step.</p>
+
+<h3 id="cat">cat</h3>
+
+<p>To read the contents of the <code class="language-plaintext highlighter-rouge">flag</code> file, we will use <code class="language-plaintext highlighter-rouge">cat</code>, another Linux tool that shows us the contents of a file or allows us to add to the file (“cat” is short for “concatenate”, which means to join together). To see the contents of the file we just downloaded, we enter <code class="language-plaintext highlighter-rouge">cat flag</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pimaker-picoctf@webshell:~$ cat flag
+picoCTF{s4n1ty_v3r1f13d_4a2b35fd}
+pimaker-picoctf@webshell:~$ 
+</code></pre></div></div>
+
+<p>The weird string that displays is the flag we are looking for. All the flags in picoCTF are in this format. We copy and paste it into the problem box and click “Submit” to finish this problem.</p>
+
+			</div>
+
+			
+						<div id="page-meta" class="t30">
+				<p>
+					<!-- Look the author details up from the site config. -->
+					
+					<!-- Output author details if some exist. -->
+					
+
+				
+				<time class="icon-calendar pr20" datetime="2022-10-14T00:00:00-06:00" itemprop="datePublished"> 2022-10-14</time>
+				
+
+				<span class="icon-archive pr20"> CTF</span>
+				<br />
+				<span class="pr20"><span class="icon-price-tag pr10"> blog</span> <span class="icon-price-tag pr10"> content</span> <span class="icon-price-tag pr10"> practice</span> </span>
+			</p>
+
+			
+			<div id="post-nav" class="row">
+				
+				<div class="medium-2 columns text-center"><a class="button small radius expand" href="http://localhost:4000/blog/archive/" title="Blog Archive">Archive</a></div><!-- /.small-4.columns -->
+				
+				<div class="medium-5 columns text-right"><a class="button small radius next" href="http://localhost:4000/ctf/mod-26/">Problem Writeup: Mod 26 - CTF 2 &raquo;</a></div><!-- /.small-4.columns -->
+				
+			</div>
+			
+			</div><!--  /.page-meta -->
+
+			
+
+			
+		</article>
+	</div><!-- /.medium-8.columns -->
+
+
+	
+
+
+	
 </div><!-- /.row -->
+
 
 	
 	    <div id="up-to-top" class="row">
@@ -500,11 +512,6 @@
 <script src="http://localhost:4000/assets/js/javascript.min.js"></script>
 
 
-
-<script>
-    $("#masthead").backstretch("https://phlow.github.io/feeling-responsive/images/header-bus.jpg", {fade: 700});
-    $("#masthead-with-text").backstretch("https://phlow.github.io/feeling-responsive/images/header-bus.jpg", {fade: 700});
-</script>
 
 
 

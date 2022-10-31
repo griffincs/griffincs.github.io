@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Video Template</title>
+	<title>Problem Writeup: Tab, Tab, Attack - CTF 2</title>
 
     <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/styles_feeling_responsive.css">
 
@@ -26,19 +26,19 @@
 
 
 	<!-- Search Engine Optimization -->
-	<meta name="description" content="If you want to show videos in a large manner, the video template is the right choice.">
+	<meta name="description" content="This problem teaches us the time-saving power of the TAB key and gives us practice navigating a Linux filesystem.">
 	<meta name="google-site-verification" content="Vk0IOJ2jwG_qEoG7fuEXYqv0m2rLa8P778Fi_GrsgEQ">
 	<meta name="msvalidate.01" content="0FB4C028ABCF07C908C54386ABD2D97F" >
 	
 	
 	
-	<link rel="canonical" href="http://localhost:4000/design/video/">
+	<link rel="canonical" href="http://localhost:4000/ctf/tab-tab-attack/">
 
 
 	<!-- Facebook Open Graph -->
-	<meta property="og:title" content="Video Template">
-	<meta property="og:description" content="If you want to show videos in a large manner, the video template is the right choice.">
-	<meta property="og:url" content="http://localhost:4000/design/video/">
+	<meta property="og:title" content="Problem Writeup: Tab, Tab, Attack - CTF 2">
+	<meta property="og:description" content="This problem teaches us the time-saving power of the TAB key and gives us practice navigating a Linux filesystem.">
+	<meta property="og:url" content="http://localhost:4000/ctf/tab-tab-attack/">
 	<meta property="og:locale" content="en_EN">
 	<meta property="og:type" content="website">
 	<meta property="og:site_name" content="Griffin CS">
@@ -86,7 +86,7 @@
 
 
 </head>
-<body id="top-of-page" class="video">
+<body id="top-of-page" class="post">
 	
 	
 <div id="navigation" class="sticky">
@@ -234,50 +234,107 @@
 
 
 
+<nav class="breadcrumbs" role="menubar" aria-label="breadcrumbs">
+ <a href="http://localhost:4000">Start</a>
+ 
+   
+    
+        <a href="http://localhost:4000/ctf/">ctf</a>
+    
+  
+    
+        <a class="current">Problem Writeup: Tab, Tab, Attack - CTF 2</a>
+    
+  
+</nav>
 
 
 
 
-	<div class="row">
-	<div class="small-12 columns">
-		<article itemprop="video" itemscope itemtype="https://schema.org/VideoObject">
-			<div class="flex-video">
-				<iframe width='970' height='546' src='//www.youtube.com/embed/WoHxoz_0ykI' frameborder='0' allowfullscreen></iframe>
+
+
+
+
+	<div class="row t30">
+	<div class="medium-8 columns medium-offset-2 end">
+		<article itemscope itemtype="https://schema.org/Article">
+			<header>
+				
+
+				<div itemprop="name">
+					<p class="subheadline">Practice CTF</p>
+					<h1>Problem Writeup: Tab, Tab, Attack - CTF 2</h1>
+				</div>
+			</header>
+
+
+			
+			<p class="teaser" itemprop="description">
+				This problem teaches us the time-saving power of the TAB key and gives us practice navigating a Linux filesystem.
+			</p>
+			
+
+			<div itemprop="articleSection">
+			<p>Category: General Skills</p>
+
+<h2 id="description">Description</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Using tabcomplete in the Terminal will add years to your life, esp. when dealing with long rambling directory structures and filenames: Addadshashanammu.zip
+</code></pre></div></div>
+
+<h2 id="approach">Approach</h2>
+
+<p>This problem teaches us the time-saving power of the TAB key and gives us practice navigating a Linux filesystem.</p>
+
+<h3 id="unzipping-the-file">Unzipping the File</h3>
+
+<p>We begin by using <code class="language-plaintext highlighter-rouge">wget</code> to download the file. Since it’s a <code class="language-plaintext highlighter-rouge">.zip</code> file–a compressed file or folder(s)–we’ll begin by unzipping it with Linux’s built-in <code class="language-plaintext highlighter-rouge">unzip</code> tool:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
 			</div>
 
-			<div class="row">
-				<div class="medium-offset-2 medium-8 end columns">
-					<header>
-						<p class="subheadline t30">Templates</p>
-						<h1 itemprop="name">Video Template</h1>
-					</header>
-
-					<meta itemprop="thumbnailUrl" content="http://img.youtube.com/vi/WoHxoz_0ykI/maxresdefault.jpg" />
-					<meta itemprop="contentURL" content="https://www.youtube.com/watch?v=WoHxoz_0ykI" />
-					<meta itemprop="embedURL" content="https://www.youtube.com/embed/WoHxoz_0ykI" />
-
+			
+						<div id="page-meta" class="t30">
+				<p>
+					<!-- Look the author details up from the site config. -->
 					
-					<p class="teaser" itemprop="description">
-						If you want to show videos in a large manner, the video template is the right choice.
-					</p>
+					<!-- Output author details if some exist. -->
 					
 
-					<!--more-->
+				
+				<time class="icon-calendar pr20" datetime="2022-10-25T00:00:00-06:00" itemprop="datePublished"> 2022-10-25</time>
+				
 
-<h2 id="about-the-video-by-kutiman">About the video by Kutiman</h2>
+				<span class="icon-archive pr20"> CTF</span>
+				<br />
+				<span class="pr20"><span class="icon-price-tag pr10"> blog</span> <span class="icon-price-tag pr10"> content</span> <span class="icon-price-tag pr10"> practice</span> </span>
+			</p>
 
-<blockquote>
-  <p>Ophir Kutiel, professionally known as Kutiman, is an Israeli musician, composer, producer and animator. He is best known for creating the online music video project, ThruYOU, and a self-titled album. <cite><a href="http://en.wikipedia.org/wiki/Kutiman">Wikipedia</a></cite></p>
-</blockquote>
+			
+			<div id="post-nav" class="row">
+				
+				<div class="medium-5 columns"><a class="button small radius prev" href="http://localhost:4000/ctf/mod-26/">&laquo; Problem Writeup: Mod 26 - CTF 2</a></div><!-- /.small-4.columns -->
+				
+				<div class="medium-2 columns text-center"><a class="button small radius expand" href="http://localhost:4000/blog/archive/" title="Blog Archive">Archive</a></div><!-- /.small-4.columns -->
+				
+				<div class="medium-5 columns text-right"></div><!-- /.small-4.columns -->
+				
+			</div>
+			
+			</div><!--  /.page-meta -->
 
-<p>Source: <a href="https://www.youtube.com/watch?v=WoHxoz_0ykI">Kutiman – Thru You Too – »Give It Up«</a></p>
+			
 
-					
-				</div><!-- /.medium-8.columns -->
-			</div><!-- /.row -->
+			
 		</article>
+	</div><!-- /.medium-8.columns -->
 
-	</div><!-- /.small-12.columns -->
+
+	
+
+
+	
 </div><!-- /.row -->
 
 
