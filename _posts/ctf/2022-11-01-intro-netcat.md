@@ -107,6 +107,3 @@ The recipe we need is "From Hex", and the input is just `0x70`. This gives us th
 Since "Let's Warm Up" was the hint for the "Nice Netcat" problem, we should expect our list of numbers in `file.txt` to be a list of numbers representing keyboard characters. But instead of hexadecimal numbers, these are plain decimal numbers.
 
 So, let's change our CyberChef recipe to "From Decimal" and paste the list of numbers in `file.txt` into the Output box in CyberChef. CyberChef automatically turns the new lines into spaces and gives us our flag.
-
-
-
