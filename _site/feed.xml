@@ -9,18 +9,68 @@
 		<atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Problem Writeup: Nice Netcat and Let&apos;s Warm Up - CTF 3</title>
+				<link>http://localhost:4000/ctf/intro-netcat/</link>
+				<pubDate>Tue, 01 Nov 2022 00:00:00 -0600</pubDate>
+				<description>&lt;p&gt;Category: General Skills&lt;/p&gt;
+
+&lt;h2 id=&quot;description-for-nice-netcat&quot;&gt;Description for Nice Netcat&lt;/h2&gt;
+
+&lt;p&gt;“There is a nice program that you can talk to by using this command in a shell: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ nc mercury.picoctf.net 49039&lt;/code&gt;, but it doesn’t speak English…”&lt;/p&gt;
+
+&lt;h2 id=&quot;approach&quot;&gt;Approach&lt;/h2&gt;
+
+&lt;p&gt;This problem introduces us to the Linux tool &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;netcat&lt;/code&gt;, a powerful tool for connecting to other computers, port scanning, and port listening.&lt;/p&gt;
+
+&lt;h3 id=&quot;unzipping-the-file&quot;&gt;Unzipping the File&lt;/h3&gt;
+
+</description>
+				<guid isPermaLink="true">http://localhost:4000/ctf/intro-netcat/</guid>
+			</item>
+		
+			<item>
+				<title>Problem Writeup: What&apos;s a Netcat? - CTF 3</title>
+				<link>http://localhost:4000/ctf/whats-a-netcat/</link>
+				<pubDate>Mon, 31 Oct 2022 00:00:00 -0600</pubDate>
+				<description>&lt;p&gt;Category: General Skills&lt;/p&gt;
+
+&lt;h2 id=&quot;description-for-nice-netcat&quot;&gt;Description for Nice Netcat&lt;/h2&gt;
+
+&lt;p&gt;“Using netcat (nc) is going to be pretty important. Can you connect to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jupiter.challenges.picoctf.org&lt;/code&gt; at port &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;25103&lt;/code&gt; to get the flag?”&lt;/p&gt;
+
+&lt;h2 id=&quot;approach&quot;&gt;Approach&lt;/h2&gt;
+
+&lt;p&gt;This problem introduces us to the Linux tool &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;netcat&lt;/code&gt;, a powerful tool for connecting to other computers, port scanning, and port listening.&lt;/p&gt;
+
+&lt;h3 id=&quot;running-netcat&quot;&gt;Running netcat&lt;/h3&gt;
+
+&lt;p&gt;We can open the manual page (i.e., the documentation page) for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;netcat&lt;/code&gt; by typing &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;man nc&lt;/code&gt; in the terminal. The page that appears tells us about netcat and–most importantly–how to run a basic netcat command in this format:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nc [destination] [port]&lt;/code&gt;. So for this problem, we run this command:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pimaker-picoctf@webshell:~$ nc jupiter.challenges.picoctf.org 25103
+You&apos;re on your way to becoming the net cat master
+picoCTF{nEtCat_Mast3ry_d0c64587}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;That was easy!&lt;/p&gt;
+
+&lt;p&gt;Press CTRL + C to end the netcat connection.&lt;/p&gt;
+</description>
+				<guid isPermaLink="true">http://localhost:4000/ctf/whats-a-netcat/</guid>
+			</item>
+		
+			<item>
 				<title>Problem Writeup: Tab, Tab, Attack - CTF 2</title>
 				<link>http://localhost:4000/ctf/tab-tab-attack/</link>
 				<pubDate>Tue, 25 Oct 2022 00:00:00 -0600</pubDate>
 				<description>&lt;p&gt;Category: General Skills&lt;/p&gt;
 
 &lt;h2 id=&quot;description&quot;&gt;Description&lt;/h2&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Using tabcomplete in the Terminal will add years to your life, esp. when dealing with long rambling directory structures and filenames: Addadshashanammu.zip
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;“Using tabcomplete in the Terminal will add years to your life, esp. when dealing with long rambling directory structures and filenames: Addadshashanammu.zip”&lt;/p&gt;
 
 &lt;h2 id=&quot;approach&quot;&gt;Approach&lt;/h2&gt;
 
-&lt;p&gt;This problem teaches us the time-saving power of the TAB key and gives us practice navigating a Linux filesystem.&lt;/p&gt;
+&lt;p&gt;This problem teaches us the time-saving power of the TAB key and gives us practice navigating a Linux filesystem (using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cd&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ls&lt;/code&gt;).&lt;/p&gt;
 
 &lt;h3 id=&quot;unzipping-the-file&quot;&gt;Unzipping the File&lt;/h3&gt;
 
@@ -39,8 +89,8 @@
 				<description>&lt;p&gt;Category: Cryptography&lt;/p&gt;
 
 &lt;h2 id=&quot;description&quot;&gt;Description&lt;/h2&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Cryptography can be easy, do you know what ROT13 is? `cvpbPGS{arkg_gvzr_V&apos;yy_gel_2_ebhaqf_bs_ebg13_uJdSftmh}`
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;“Cryptography can be easy, do you know what ROT13 is? &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cvpbPGS{arkg_gvzr_V&apos;yy_gel_2_ebhaqf_bs_ebg13_uJdSftmh}&lt;/code&gt;”&lt;/p&gt;
 
 &lt;h2 id=&quot;approach&quot;&gt;Approach&lt;/h2&gt;
 
@@ -76,8 +126,8 @@ Output	NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm
 				<description>&lt;p&gt;Category: General Skills&lt;/p&gt;
 
 &lt;h2 id=&quot;description&quot;&gt;Description&lt;/h2&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;This file has a flag in plain sight (aka &quot;in-the-clear&quot;). Download flag.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;“This file has a flag in plain sight (aka “in-the-clear”). Download flag.”&lt;/p&gt;
 
 &lt;h2 id=&quot;approach&quot;&gt;Approach&lt;/h2&gt;
 

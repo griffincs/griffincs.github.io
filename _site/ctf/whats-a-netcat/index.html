@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Blog Archive</title>
+	<title>Problem Writeup: What&#39;s a Netcat? - CTF 3</title>
 
     <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/styles_feeling_responsive.css">
 
@@ -26,19 +26,19 @@
 
 
 	<!-- Search Engine Optimization -->
-	<meta name="description" content="Check out all blog posts in the archive. Click on a headline to read the teaser.">
+	<meta name="description" content="This problem teaches us the time-saving power of the TAB key and gives us practice navigating a Linux filesystem.">
 	<meta name="google-site-verification" content="Vk0IOJ2jwG_qEoG7fuEXYqv0m2rLa8P778Fi_GrsgEQ">
 	<meta name="msvalidate.01" content="0FB4C028ABCF07C908C54386ABD2D97F" >
 	
 	
 	
-	<link rel="canonical" href="http://localhost:4000/blog/archive/">
+	<link rel="canonical" href="http://localhost:4000/ctf/whats-a-netcat/">
 
 
 	<!-- Facebook Open Graph -->
-	<meta property="og:title" content="Blog Archive">
-	<meta property="og:description" content="Check out all blog posts in the archive. Click on a headline to read the teaser.">
-	<meta property="og:url" content="http://localhost:4000/blog/archive/">
+	<meta property="og:title" content="Problem Writeup: What&#39;s a Netcat? - CTF 3">
+	<meta property="og:description" content="This problem teaches us the time-saving power of the TAB key and gives us practice navigating a Linux filesystem.">
+	<meta property="og:url" content="http://localhost:4000/ctf/whats-a-netcat/">
 	<meta property="og:locale" content="en_EN">
 	<meta property="og:type" content="website">
 	<meta property="og:site_name" content="Griffin CS">
@@ -86,7 +86,7 @@
 
 
 </head>
-<body id="top-of-page" class="">
+<body id="top-of-page" class="post">
 	
 	
 <div id="navigation" class="sticky">
@@ -221,7 +221,7 @@
 
 	
 
-<div id="masthead">
+<div id="masthead-no-image-header">
 	<div class="row">
 		<div class="small-12 columns">
 			<a id="logo" href="http://localhost:4000/" title="Griffin CS – Classical Code">
@@ -239,11 +239,11 @@
  
    
     
-        <a href="http://localhost:4000/blog/">blog</a>
+        <a href="http://localhost:4000/ctf/">ctf</a>
     
   
     
-        <a class="current">Blog Archive</a>
+        <a class="current">Problem Writeup: What's a Netcat? - CTF 3</a>
     
   
 </nav>
@@ -255,63 +255,92 @@
 
 
 
+	<div class="row t30">
+	<div class="medium-8 columns medium-offset-2 end">
+		<article itemscope itemtype="https://schema.org/Article">
+			<header>
+				
+
+				<div itemprop="name">
+					<p class="subheadline">Practice CTF</p>
+					<h1>Problem Writeup: What's a Netcat? - CTF 3</h1>
+				</div>
+			</header>
 
 
-	<div id="blog-index" class="row">
-	<div class="small-12 columns t30">
-		<h1>Blog Archive</h1>
-		<p class="teaser">Check out all blog posts in the archive. Click on a headline to read the teaser.</p>
+			
+			<p class="teaser" itemprop="description">
+				This problem teaches us the time-saving power of the TAB key and gives us practice navigating a Linux filesystem.
+			</p>
+			
 
-		<dl class="accordion" data-accordion>
+			<div itemprop="articleSection">
+			<p>Category: General Skills</p>
+
+<h2 id="description-for-nice-netcat">Description for Nice Netcat</h2>
+
+<p>“Using netcat (nc) is going to be pretty important. Can you connect to <code class="language-plaintext highlighter-rouge">jupiter.challenges.picoctf.org</code> at port <code class="language-plaintext highlighter-rouge">25103</code> to get the flag?”</p>
+
+<h2 id="approach">Approach</h2>
+
+<p>This problem introduces us to the Linux tool <code class="language-plaintext highlighter-rouge">netcat</code>, a powerful tool for connecting to other computers, port scanning, and port listening.</p>
+
+<h3 id="running-netcat">Running netcat</h3>
+
+<p>We can open the manual page (i.e., the documentation page) for <code class="language-plaintext highlighter-rouge">netcat</code> by typing <code class="language-plaintext highlighter-rouge">man nc</code> in the terminal. The page that appears tells us about netcat and–most importantly–how to run a basic netcat command in this format:  <code class="language-plaintext highlighter-rouge">nc [destination] [port]</code>. So for this problem, we run this command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pimaker-picoctf@webshell:~$ nc jupiter.challenges.picoctf.org 25103
+You're on your way to becoming the net cat master
+picoCTF{nEtCat_Mast3ry_d0c64587}
+</code></pre></div></div>
+
+<p>That was easy!</p>
+
+<p>Press CTRL + C to end the netcat connection.</p>
+
+			</div>
+
 			
+						<div id="page-meta" class="t30">
+				<p>
+					<!-- Look the author details up from the site config. -->
+					
+					<!-- Output author details if some exist. -->
+					
+
+				
+				<time class="icon-calendar pr20" datetime="2022-10-31T00:00:00-06:00" itemprop="datePublished"> 2022-10-31</time>
+				
+
+				<span class="icon-archive pr20"> CTF</span>
+				<br />
+				<span class="pr20"><span class="icon-price-tag pr10"> blog</span> <span class="icon-price-tag pr10"> content</span> <span class="icon-price-tag pr10"> practice</span> </span>
+			</p>
+
 			
-			<dd class="accordion-navigation">
-			<a href="#panel1"><span class="iconfont"></span> Practice CTF › <strong>Problem Writeup: Nice Netcat and Let's Warm Up - CTF 3</strong></a>
-				<div id="panel1" class="content">
-					This problem introduces us to the Linux tool `netcat`, a powerful tool for connecting to other computers, port scanning, and port listening.
-					<a href="http://localhost:4000/ctf/intro-netcat/" title="Read Problem Writeup: Nice Netcat and Let&#39;s Warm Up - CTF 3"><strong>Read More&nbsp;›</strong></a><br><br>
-				</div>
-			</dd>
+			<div id="post-nav" class="row">
+				
+				<div class="medium-5 columns"><a class="button small radius prev" href="http://localhost:4000/ctf/tab-tab-attack/">&laquo; Problem Writeup: Tab, Tab, Attack - CTF 2</a></div><!-- /.small-4.columns -->
+				
+				<div class="medium-2 columns text-center"><a class="button small radius expand" href="http://localhost:4000/blog/archive/" title="Blog Archive">Archive</a></div><!-- /.small-4.columns -->
+				
+				<div class="medium-5 columns text-right"><a class="button small radius next" href="http://localhost:4000/ctf/intro-netcat/">Problem Writeup: Nice Netcat and Let's Warm Up - CTF 3 &raquo;</a></div><!-- /.small-4.columns -->
+				
+			</div>
 			
+			</div><!--  /.page-meta -->
+
 			
-			<dd class="accordion-navigation">
-			<a href="#panel2"><span class="iconfont"></span> Practice CTF › <strong>Problem Writeup: What's a Netcat? - CTF 3</strong></a>
-				<div id="panel2" class="content">
-					This problem teaches us the time-saving power of the TAB key and gives us practice navigating a Linux filesystem.
-					<a href="http://localhost:4000/ctf/whats-a-netcat/" title="Read Problem Writeup: What&#39;s a Netcat? - CTF 3"><strong>Read More&nbsp;›</strong></a><br><br>
-				</div>
-			</dd>
+
 			
-			
-			<dd class="accordion-navigation">
-			<a href="#panel3"><span class="iconfont"></span> Practice CTF › <strong>Problem Writeup: Tab, Tab, Attack - CTF 2</strong></a>
-				<div id="panel3" class="content">
-					This problem teaches us the time-saving power of the TAB key and gives us practice navigating a Linux filesystem.
-					<a href="http://localhost:4000/ctf/tab-tab-attack/" title="Read Problem Writeup: Tab, Tab, Attack - CTF 2"><strong>Read More&nbsp;›</strong></a><br><br>
-				</div>
-			</dd>
-			
-			
-			<dd class="accordion-navigation">
-			<a href="#panel4"><span class="iconfont"></span> Practice CTF › <strong>Problem Writeup: Mod 26 - CTF 2</strong></a>
-				<div id="panel4" class="content">
-					This problem introduces us to cryptography, specifically to the Caesar cipher.
-					<a href="http://localhost:4000/ctf/mod-26/" title="Read Problem Writeup: Mod 26 - CTF 2"><strong>Read More&nbsp;›</strong></a><br><br>
-				</div>
-			</dd>
-			
-			
-			<dd class="accordion-navigation">
-			<a href="#panel5"><span class="iconfont"></span> Practice CTF › <strong>Problem Writeup: Obedient Cat - CTF 1</strong></a>
-				<div id="panel5" class="content">
-					This is a very simple problem that introduces us to the webshell and to two important Linux commands:  `wget` and `cat`.
-					<a href="http://localhost:4000/ctf/obedient-cat/" title="Read Problem Writeup: Obedient Cat - CTF 1"><strong>Read More&nbsp;›</strong></a><br><br>
-				</div>
-			</dd>
-			
-			
-		</dl>
-	</div><!-- /.small-12.columns -->
+		</article>
+	</div><!-- /.medium-8.columns -->
+
+
+	
+
+
+	
 </div><!-- /.row -->
 
 
@@ -455,11 +484,6 @@
 <script src="http://localhost:4000/assets/js/javascript.min.js"></script>
 
 
-
-<script>
-    $("#masthead").backstretch("https://phlow.github.io/feeling-responsive/images/header_unsplash_8.jpg", {fade: 700});
-    $("#masthead-with-text").backstretch("https://phlow.github.io/feeling-responsive/images/header_unsplash_8.jpg", {fade: 700});
-</script>
 
 
 

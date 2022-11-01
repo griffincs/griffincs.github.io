@@ -21,13 +21,12 @@ author: mrk
 Category: General Skills
 
 ## Description
-```
-Using tabcomplete in the Terminal will add years to your life, esp. when dealing with long rambling directory structures and filenames: Addadshashanammu.zip
-```
+
+"Using tabcomplete in the Terminal will add years to your life, esp. when dealing with long rambling directory structures and filenames: Addadshashanammu.zip"
 
 ## Approach
 
-This problem teaches us the time-saving power of the TAB key and gives us practice navigating a Linux filesystem. 
+This problem teaches us the time-saving power of the TAB key and gives us practice navigating a Linux filesystem (using `cd` and `ls`). 
 
 ### Unzipping the File
 
