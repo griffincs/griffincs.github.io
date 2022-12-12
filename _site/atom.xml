@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 	<id>http://localhost:4000/</id>
 	<title>Griffin CS</title>
-	<updated>2022-11-01T08:52:58-06:00</updated>
+	<updated>2022-12-12T14:24:30-07:00</updated>
 
 	<subtitle>Logging the adventures and exploits of a classial school computer science program.</subtitle>
 
@@ -24,6 +24,198 @@
 
 	<generator uri="http://jekyllrb.com" version="4.2.2">Jekyll</generator>
 
+	
+		<entry>
+			<id>http://localhost:4000/ctf/magikarp-ground-mission/</id>
+			<title>Problem Writeup: Magikarp Ground Mission - CTF 5</title>
+			<link href="http://localhost:4000/ctf/magikarp-ground-mission/" rel="alternate" type="text/html" title="Problem Writeup: Magikarp Ground Mission - CTF 5" />
+			<updated>2022-12-05T00:00:00-07:00</updated>
+
+			
+				
+				<author>
+					
+						<name>mrk</name>
+					
+					
+					
+				</author>
+			
+			<summary>This problem introduces us to ssh and changing directories in Linux.</summary>
+			<content type="html" xml:base="http://localhost:4000/ctf/magikarp-ground-mission/">&lt;p&gt;Category: General Skills&lt;/p&gt;
+
+&lt;h2 id=&quot;description-for-magikarp-ground-mission&quot;&gt;Description for Magikarp Ground Mission&lt;/h2&gt;
+
+&lt;p&gt;“Do you know how to move between directories and read files in the shell? Start the container, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ssh&lt;/code&gt; to it, and then &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ls&lt;/code&gt; once connected to begin. Login via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ssh&lt;/code&gt; as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ctf-player&lt;/code&gt; with the password, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;6dee9772&lt;/code&gt;.”&lt;/p&gt;
+
+&lt;h2 id=&quot;approach&quot;&gt;Approach&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ssh&lt;/code&gt; stands for Secure Shell, and it is a Linux tool that is similar to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;netcat&lt;/code&gt; in function:  both &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ssh&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;netcat&lt;/code&gt; allow us to connect remotely to another computer. The essential difference is that &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ssh&lt;/code&gt; allows us to make an encrypted connection (which is why it is called “secure shell”).&lt;/p&gt;
+
+&lt;p&gt;Once we’ve established an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ssh&lt;/code&gt; connection, we have essentially used our computer to access a shell on another computer. To do this we’ll need 1) a user account on the host machine, 2) a password to that account so we can login remotely.&lt;/p&gt;
+
+&lt;h2 id=&quot;opening-the-ssh-connection&quot;&gt;Opening the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ssh&lt;/code&gt; Connection&lt;/h2&gt;
+
+&lt;p&gt;For this problem, we first need to click the blue “Start Instance” button in the problem box and wait a few seconds until the “Challenge Endpoint” information appears. Copy this command and paste it into your webshell. When asked if you want to continue connecting, type “yes” and hit enter. When asked for the password, copy and paste the password from the problem statement:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pimaker-picoctf@webshell:~$ ssh ctf-player@venus.picoctf.net -p 54085
+The authenticity of host &apos;[venus.picoctf.net]:54085 ([3.131.124.143]:54085)&apos; can&apos;t be established.
+ED25519 key fingerprint is SHA256:P1f6h95BrSVnJbm2AKhphfHHGEyAeThib/rN/AwKs24.
+This host key is known by the following other names/addresses:
+    ~/.ssh/known_hosts:1: [hashed name]
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added &apos;[venus.picoctf.net]:54085&apos; (ED25519) to the list of known hosts.
+ctf-player@venus.picoctf.net&apos;s password:
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Once we enter the correct password, the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ssh&lt;/code&gt; connection is completed and our command prompt changed to match the user account we have accessed–in this case, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ctf-player@pico-chall&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Welcome to Ubuntu 18.04.5 LTS (GNU/Linux 5.4.0-1041-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+This system has been minimized by removing packages and content that are
+not required on a system that users do not log into.
+
+To restore this content, you can run the &apos;unminimize&apos; command.
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+ctf-player@pico-chall$
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;finding-the-flag&quot;&gt;Finding the Flag&lt;/h2&gt;
+
+&lt;p&gt;Once connected, the first step is to explore our working directory (the directory we are currently in) by typing &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ls&lt;/code&gt;. We have two files in our directory;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ctf-player@pico-chall&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls
+&lt;/span&gt;1of3.flag.txt  instructions-to-2of3.txt
+ctf-player@pico-chall&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Let’s use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cat&lt;/code&gt; to explore each file:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ctf-player@pico-chall&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat &lt;/span&gt;1of3.flag.txt 
+picoCTF&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;xxsh_
+ctf-player@pico-chall&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat &lt;/span&gt;instructions-to-2of3.txt 
+Next, go to the root of all things, more succinctly &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;/&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
+ctf-player@pico-chall&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The first file contains what we might expect:  1/3 of the flag. The other file tells us to go to the root directory (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/&lt;/code&gt;), where all the system files are stored. We can do this with the change directory command:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cd /&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ctf-player@pico-chall&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /
+ctf-player@pico-chall&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls
+&lt;/span&gt;2of3.flag.txt  bin  boot  dev  etc  home  instructions-to-3of3.txt  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+ctf-player@pico-chall&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;When we list the files of the root directory, we see the usual directories found here on a Linux system. But we also have two new files to explore:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ctf-player@pico-chall&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat &lt;/span&gt;2of3.flag.txt 
+0ut_0f_&lt;span class=&quot;se&quot;&gt;\/\/&lt;/span&gt;4t3r_
+ctf-player@pico-chall&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat &lt;/span&gt;instructions-to-3of3.txt 
+Lastly, ctf-player, go home... more succinctly &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;~&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
+ctf-player@pico-chall&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;We found the second 1/3 of the flag, and need to change to the home directory (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~&lt;/code&gt;) with the command &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cd ~&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ctf-player@pico-chall&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~
+ctf-player@pico-chall&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls
+&lt;/span&gt;3of3.flag.txt  drop-in
+ctf-player@pico-chall&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat &lt;/span&gt;3of3.flag.txt 
+540e4e79&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+ctf-player@pico-chall&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;When we explore the final in the home directory, we have the last part of the flag. Combining all three of the pieces into one string gives us the final and correct flag:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;picoCTF{xxsh_0ut_0f_\/\/4t3r_540e4e79}&lt;/code&gt;.&lt;/p&gt;
+
+</content>
+
+			
+				<category term="ctf" />
+			
+			
+				<category term="blog" />
+			
+				<category term="content" />
+			
+				<category term="practice" />
+			
+
+			<published>2022-12-05T00:00:00-07:00</published>
+		</entry>
+	
+		<entry>
+			<id>http://localhost:4000/ctf/warmed-up-2warm/</id>
+			<title>Problem Writeup: Let&apos;s Warm Up, Warmed Up, and 2Warm - CTF 4</title>
+			<link href="http://localhost:4000/ctf/warmed-up-2warm/" rel="alternate" type="text/html" title="Problem Writeup: Let&apos;s Warm Up, Warmed Up, and 2Warm - CTF 4" />
+			<updated>2022-11-07T00:00:00-07:00</updated>
+
+			
+				
+				<author>
+					
+						<name>mrk</name>
+					
+					
+					
+				</author>
+			
+			<summary>This problem has us explore numbers in different bases (or encodings).</summary>
+			<content type="html" xml:base="http://localhost:4000/ctf/warmed-up-2warm/">&lt;p&gt;Category: General Skills&lt;/p&gt;
+
+&lt;h2 id=&quot;description-for-lets-warm-up&quot;&gt;Description for Let’s Warm Up&lt;/h2&gt;
+
+&lt;p&gt;“If I told you a word started with 0x70 in hexadecimal, what would it start with in ASCII?”&lt;/p&gt;
+
+&lt;h2 id=&quot;approach&quot;&gt;Approach&lt;/h2&gt;
+
+&lt;p&gt;Since we’ll be converting bases for this problem, CyberChef will be our tool of choice. Remembering all numbers, letters, and symbols from the keyboard have a numerical value attached to them, and that ASCII is the “keyboard equivalent” of the numbers, we can use CyberChef to convert &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0x70&lt;/code&gt; from hexadecimal to ASCII with one recipe.&lt;/p&gt;
+
+&lt;p&gt;First, we copy &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0x70&lt;/code&gt; from the problem statement and paste it into the CyberChef input field. Then we search for the “From Hex” recipe and drag it into the Recipe field. As soon as we do that, we get &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;p&lt;/code&gt; in the Output field. Wrapping &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;p&lt;/code&gt; in the usual &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;picoCTF{}&lt;/code&gt; gives us the correct flag.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;h2 id=&quot;description-for-warmed-up&quot;&gt;Description for Warmed Up&lt;/h2&gt;
+
+&lt;p&gt;“What is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0x3D&lt;/code&gt; (base 16) in decimal (base 10)?”&lt;/p&gt;
+
+&lt;h2 id=&quot;approach-1&quot;&gt;Approach&lt;/h2&gt;
+
+&lt;p&gt;Again, CyberChef is the tool we want to use for this problem. We use the same steps from the “Let’s Warm Up” problem, but there isn’t a “From Base16” option. However, there is a “From Base” recipe with an option to adjust the Radix (or “root”, another name for “base”). If we drag this recipe into the Recipe field and adjust the Radix to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;16&lt;/code&gt;, we get the right conversion in the output (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;61&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;Wrapping &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;61&lt;/code&gt; in the usual &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;picoCTF{}&lt;/code&gt; gives us the correct flag.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;h2 id=&quot;description-for-2warm&quot;&gt;Description for 2Warm&lt;/h2&gt;
+
+&lt;p&gt;“Can you convert the number 42 (base 10) to binary (base 2)?”&lt;/p&gt;
+
+&lt;h2 id=&quot;approach-2&quot;&gt;Approach&lt;/h2&gt;
+
+&lt;p&gt;Once again, we’ll use CyberChef for this problem. There is a “To Binary” recipe, but this returns &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;4&lt;/code&gt; in binary and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2&lt;/code&gt; in binary, which isn’t what we want. The recipe we’re looking for is “To Base” with a Radix of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2&lt;/code&gt;. This gives us &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;101010&lt;/code&gt;, which gives us the correct flag when we wrap it with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;picoCTF{}&lt;/code&gt;.&lt;/p&gt;
+</content>
+
+			
+				<category term="ctf" />
+			
+			
+				<category term="blog" />
+			
+				<category term="content" />
+			
+				<category term="practice" />
+			
+
+			<published>2022-11-07T00:00:00-07:00</published>
+		</entry>
 	
 		<entry>
 			<id>http://localhost:4000/ctf/intro-netcat/</id>
@@ -52,8 +244,82 @@
 
 &lt;p&gt;This problem introduces us to the Linux tool &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;netcat&lt;/code&gt;, a powerful tool for connecting to other computers, port scanning, and port listening.&lt;/p&gt;
 
-&lt;h3 id=&quot;unzipping-the-file&quot;&gt;Unzipping the File&lt;/h3&gt;
+&lt;h3 id=&quot;running-netcat&quot;&gt;Running netcat&lt;/h3&gt;
 
+&lt;p&gt;When we run the given &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;netcat&lt;/code&gt; command, we get a bunch of numbers:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pimaker-picoctf@webshell:~$ nc mercury.picoctf.net 49039
+112 
+105 
+99 
+111 
+67 
+84 
+70 
+123 
+103 
+48 
+48 
+100 
+95 
+107 
+49 
+116 
+116 
+121 
+33 
+95 
+110 
+49 
+99 
+51 
+95 
+107 
+49 
+116 
+116 
+121 
+33 
+95 
+51 
+100 
+56 
+52 
+101 
+100 
+99 
+56 
+125 
+10
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The numbers don’t seem to follow any pattern, and the hints point us to solving another CTF problem “Let’s Warm Up.” Before looking at that problem, let’s save the output of this netcat connection to a file so we don’t have to run the netcat command again.&lt;/p&gt;
+
+&lt;p&gt;To do this, press CTRL + C to end the current netcat connection, the hit the UP arrow to recall the last netcat command. Before pressing enter, we want to add ` &amp;gt; file.txt&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt; to this command. This will tell the shell to save the netcat output to a file named &lt;/code&gt;file.txt` instead of printing it to the screen. When we run the command, it looks like nothing happens at first.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pimaker-picoctf@webshell:~$ nc mercury.picoctf.net 49039 &amp;gt; file.txt
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;But if we cancel the netcat connection and run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cat file.txt&lt;/code&gt;, we see that we now have a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;file.txt&lt;/code&gt; with all the numbers in it. Let’s go to the “Let’s Warm Up” problem to see if it can help us figure out what to do with these numbers.&lt;/p&gt;
+
+&lt;h3 id=&quot;description-for-lets-warm-up&quot;&gt;Description for Let’s Warm Up&lt;/h3&gt;
+
+&lt;p&gt;“If I told you a word started with 0x70 in hexadecimal, what would it start with in ASCII?”&lt;/p&gt;
+
+&lt;h3 id=&quot;approach-1&quot;&gt;Approach&lt;/h3&gt;
+
+&lt;p&gt;This looks like a pretty straightforward problem of translating a hexadecimal value into a keyboard (or ASCII) character. At the most basic level, computers represent all information in binary, a number system that uses only 1’s and 0’s. So every keyboard character is assigned a number–a number than can be expressed in the decimal system, the hexadecimal system, or the binary system.&lt;/p&gt;
+
+&lt;p&gt;In this can we have “0x70”, a hexadecimal number, that stands for a certain keyboard character. We just need to translate this number to the right character. To do this, let’s use CyberChef.&lt;/p&gt;
+
+&lt;p&gt;The recipe we need is “From Hex”, and the input is just &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0x70&lt;/code&gt;. This gives us the output &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;p&lt;/code&gt;. If we wrap this letter in the normal CTF flag notation, we get “picoCTF{p}”, which is the correct answer to this problem.&lt;/p&gt;
+
+&lt;h3 id=&quot;back-to-nice-netcat&quot;&gt;Back to Nice Netcat&lt;/h3&gt;
+
+&lt;p&gt;Since “Let’s Warm Up” was the hint for the “Nice Netcat” problem, we should expect our list of numbers in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;file.txt&lt;/code&gt; to be a list of numbers representing keyboard characters. But instead of hexadecimal numbers, these are plain decimal numbers.&lt;/p&gt;
+
+&lt;p&gt;So, let’s change our CyberChef recipe to “From Decimal” and paste the list of numbers in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;file.txt&lt;/code&gt; into the Output box in CyberChef. CyberChef automatically turns the new lines into spaces and gives us our flag.&lt;/p&gt;
 </content>
 
 			
