@@ -1,0 +1,29 @@
+---
+layout: page
+subheadline: Practice CTF
+title:  "Problem Writeup: Python Wrangling, Wave a flag, Static ain't always noise - CTF 5"
+teaser: "This problem introduce us to executing Python scripts and BASH scripts in Linux."
+meta_teaser: 
+breadcrumb: true
+categories:
+    - ctf
+tags:
+    - blog
+    - content
+    - practice
+image:
+    title: 
+    caption: 
+    caption_url: 
+author: mrk
+---
+
+Category: General Skills
+
+## Description for Python Wrangling
+
+"Python scripts are invoked kind of like programs in the Terminal... Can you run this Python script using this password to get the flag?"
+
+## Approach
+
+This problem
