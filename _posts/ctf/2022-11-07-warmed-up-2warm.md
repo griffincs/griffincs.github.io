@@ -1,7 +1,7 @@
 ---
 layout: page
 subheadline: Practice CTF
-title:  "Problem Writeup: Let's Warm Up, Warmed Up, and 2Warm - CTF 4"
+title:  "Problem Writeup: Let's Warm Up, Warmed Up, and 2Warm - CTF 6"
 teaser: "This problem has us explore numbers in different bases (or encodings)."
 meta_teaser: 
 breadcrumb: true

@@ -1,7 +1,7 @@
 ---
 layout: page
 subheadline: Practice CTF
-title:  "Problem Writeup: Python Wrangling, Wave a flag, Static ain't always noise - CTF 5"
+title:  "Problem Writeup: Python Wrangling, Wave a flag, Static ain't always noise - CTF 8"
 teaser: "This problem introduce us to executing Python scripts and BASH scripts in Linux."
 meta_teaser: 
 breadcrumb: true

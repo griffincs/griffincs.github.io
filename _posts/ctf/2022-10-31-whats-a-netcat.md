@@ -1,7 +1,7 @@
 ---
 layout: page
 subheadline: Practice CTF
-title:  "Problem Writeup: What's a Netcat? - CTF 3"
+title:  "Problem Writeup: What's a Netcat? - CTF 4"
 teaser: "This problem teaches us the time-saving power of the TAB key and gives us practice navigating a Linux filesystem."
 meta_teaser: 
 breadcrumb: true

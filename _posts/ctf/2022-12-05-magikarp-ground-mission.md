@@ -1,7 +1,7 @@
 ---
 layout: page
 subheadline: Practice CTF
-title:  "Problem Writeup: Magikarp Ground Mission - CTF 5"
+title:  "Problem Writeup: Magikarp Ground Mission - CTF 7"
 teaser: "This problem introduces us to ssh and changing directories in Linux."
 meta_teaser: 
 breadcrumb: true

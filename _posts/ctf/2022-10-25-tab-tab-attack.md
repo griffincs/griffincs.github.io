@@ -1,7 +1,7 @@
 ---
 layout: page
 subheadline: Practice CTF
-title:  "Problem Writeup: Tab, Tab, Attack - CTF 2"
+title:  "Problem Writeup: Tab, Tab, Attack - CTF 3"
 teaser: "This problem teaches us the time-saving power of the TAB key and gives us practice navigating a Linux filesystem."
 meta_teaser: 
 breadcrumb: true
